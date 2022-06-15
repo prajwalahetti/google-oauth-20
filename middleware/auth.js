@@ -1,12 +1,12 @@
 module.exports={
     ensureAuth:function(req,res,next){
         if(req.isAuthenticated()){
+            
             return next()
         }
         else
         {
-            console.log('noots');
-            res.redirect('/')
+           res.redirect('/')
         }
     },
     ensureGuest:function(req,res,next){

@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 const morgan = require("morgan");
 const passport = require("passport");
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 // load config
 dotenv.config({ path: "./config/.env" });
@@ -23,6 +24,8 @@ app.use(session({
     secret: process.env.PASSPORT_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie:{originalMaxAge:1000*3600   },
+    store: MongoStore.create({mongoUrl: process.env.MONGO_URI,}),
 }))
 
 //passport middleware

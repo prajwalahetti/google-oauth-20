@@ -4,7 +4,8 @@ const passport = require("passport");
 
 // auth/google
 // get auth
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
+router.get("/google", passport.authenticate("google", { scope: ["profile"] })
+);
 
 //auth/google/callback
 // get
