@@ -16,7 +16,6 @@ const App = () => {
       <Route path="/auth/google" element={<Login />} />
       <Route path="/auth/logout" element={<Logout />} />
       <Route path='/dashboard' element={<Dashboard/>}/>
-      
       </Routes>
 
     </div>
