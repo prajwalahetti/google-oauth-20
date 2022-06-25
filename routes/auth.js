@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const passport = require("passport");
 
 // auth/google
@@ -19,6 +20,12 @@ router.get(
     res.redirect("/dashboard");
   }
 );
+
+// auth/current_user
+// get
+router.get('/current_user',(req, res) => {
+  res.send(req.user)
+});
 
 // logout user
 // auth/logout

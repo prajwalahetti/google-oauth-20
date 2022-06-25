@@ -17,6 +17,11 @@ router.get("/dashboard",ensureAuth, (req, res) => {
   res.send('this is a protrected routes')
 });
 
+// /landing
+// get
+router.get("/landing",ensureGuest, (req, res) => {
+  res.send('this is a un protected landing routes')
+ });
 
 
 
