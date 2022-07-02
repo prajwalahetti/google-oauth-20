@@ -3,8 +3,9 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const morgan = require("morgan");
 const passport = require("passport");
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const cors = require("cors");
 
 // load config
 dotenv.config({ path: "./config/.env" });
@@ -20,21 +21,30 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 // express session
-app.use(session({
+app.use(
+  session({
+    name: "session",
     secret: process.env.PASSPORT_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie:{originalMaxAge:1000*3600   },
-    store: MongoStore.create({mongoUrl: process.env.MONGO_URI,}),
-}))
+    cookie: { originalMaxAge: 1000 * 60 * 10 },
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+  })
+);
 
 //passport middleware
 app.use(passport.initialize());
-app.use(passport.session())
-
+app.use(passport.session());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 // Routes
 app.use("/", require("./routes/index"));
-app.use('/auth',require('./routes/auth'))
+app.use("/auth", require("./routes/auth"));
 const PORT = process.env.PORT || 5000;
 
 app.listen(

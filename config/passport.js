@@ -16,7 +16,6 @@ module.exports = function (passport) {
           displayName: profile.displayName,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
-         
         };
         try {
           let user = await User.findOne({ googleId: profile.id });
