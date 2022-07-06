@@ -11,7 +11,7 @@ import Alert from "./components/layout/Alert";
 import { useEffect } from "react";
 import { loadUser } from "./actions/auth";
 import PrivateRoute from "./components/routing/PrivateRoute";
-
+import NavBar from "./components/layout/NavBar";
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
@@ -21,6 +21,7 @@ const App = () => {
       <BrowserRouter>
         <div className="App">
           <Alert />
+          <NavBar/>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />

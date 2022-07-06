@@ -5,15 +5,16 @@ import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
-
+import {FaGoogle} from 'react-icons/fa';
 const Login = ({ setAlert, login }) => {
   const googleAuth = () => {
     login();
   };
 
   return (
-    <div>
-      <button onClick={googleAuth}>Sign in using google</button>
+    <div className="container">
+      <button onClick={googleAuth} className="button"> <div className="logo"  ></div><div className="text" >Sign in with Google</div></button>
+      
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Logout = ({ logout }) => {
     logout();
   };
   return (
-    <div>
+    <div className="container">
       <button onClick={googleAuth}>Log Out</button>
     </div>
   );

@@ -17,7 +17,7 @@ router.get("/dashboard", ensureAuth, (req, res) => {
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
-    res.redirect(`${process.env.CLIENT_URL}`);
+    res.redirect(`${process.env.CLIENT_URL}/dashboard`);
   } else {
     return res.status(400).json({ errors: [{ msg: "Login Failed" }] });
   }
