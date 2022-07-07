@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
@@ -13,9 +13,13 @@ import { loadUser } from "./actions/auth";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import NavBar from "./components/layout/NavBar";
 const App = () => {
+
   useEffect(() => {
+   const fetchUser=()=>{
     store.dispatch(loadUser());
-  }, []);
+   }
+   fetchUser();
+  },[]);
   return (
     <Provider store={store}>
       <BrowserRouter>
