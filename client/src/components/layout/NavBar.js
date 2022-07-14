@@ -36,11 +36,9 @@ const NavBar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
      
       <li>
-        <Link to="/login">Sign Up</Link>
+        <Link to="/login">Sign Up/Login</Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+    
     </ul>
   );
 
@@ -48,7 +46,7 @@ const NavBar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className="navbar bg-cream">
       <h1>
         <Link to="/">
-          <i className="fas fa-code"></i> App Name
+          <i className="fas fa-code"></i> Auth
         </Link>
       </h1>
       { (

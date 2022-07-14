@@ -23,10 +23,12 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="App">
+       
           <Alert />
           <NavBar/>
+          <div className="maincontainer">
           <Routes>
+            
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
