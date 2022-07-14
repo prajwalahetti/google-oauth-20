@@ -130,6 +130,8 @@
   display: block;
   text-align: center;
   height: 6vh;
+  background-color: 		#FFA500;
+  color:#333
 }
 .navbar ul {
   text-align: center;
@@ -139,22 +141,24 @@
 .navbar .welcome {
   display: none;
 }
-.bg-cream{
-  background-color: #f19b54;
-  color:#333;
-  
-}
 
-button {
+
+.button {
   font-family: Akzidenz Grotesk BQ Light, Helvetica;
   color: #42494f;
   font-size: 16px;
   outline: none;
   border: initial;
-  background-color: rgb(238, 212, 179) ;
+  background-color: 	#FFA500;
   padding: 10px;
 
 border-radius: 20px;
+
+ 
+}
+.button:hover{
+  background-color: #4CAF50; /* Green */
+  color: white;
 }
 
 div.logo {
@@ -199,7 +203,7 @@ div.logo {
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  color: #000000;
 }
 
 .navbar .welcome span {
