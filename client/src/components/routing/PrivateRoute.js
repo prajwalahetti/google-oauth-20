@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 const PrivateRoute = ({
   component: Component,
-  auth: { isAuthenticated,user },
+  auth: { isAuthenticated, user },
 }) => {
-  if (user ===null ) return <Spinner />;
+  if (user === null) return <Spinner />;
   if (isAuthenticated) return <Component />;
 
   return <Navigate to="/login" />;

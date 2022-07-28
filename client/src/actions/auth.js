@@ -14,8 +14,7 @@ export const login = () => (dispatch) => {
     dispatch({
       type: LOGIN_SUCCESS,
     });
-   
-   
+    dispatch(setAlert("login success", "success"));
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -26,8 +25,7 @@ export const login = () => (dispatch) => {
     dispatch({
       type: LOGIN_FAIL,
     });
-    dispatch(setAlert("login fail", "danger"))
-
+    dispatch(setAlert("login fail", "danger"));
   }
 };
 export const logout = () => (dispatch) => {
@@ -36,6 +34,7 @@ export const logout = () => (dispatch) => {
     dispatch({
       type: LOGOUT,
     });
+    dispatch(setAlert("logout success", "light"));
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -49,7 +48,7 @@ export const logout = () => (dispatch) => {
   }
 };
 export const loadUser = () => async (dispatch) => {
-  // check for cookie 
+  // check for cookie
   try {
     const res = await axios.get(
       `${process.env.REACT_APP_SERVER_URL}/auth/current_user`,
@@ -59,7 +58,6 @@ export const loadUser = () => async (dispatch) => {
       type: LOAD_USER,
       payload: res.data,
     });
-    
   } catch (err) {
     const errors = err.response.data.errors;
 

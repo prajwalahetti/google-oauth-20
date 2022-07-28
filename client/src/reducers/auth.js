@@ -6,7 +6,6 @@ import {
   LOAD_USER,
 } from "../actions/types";
 
-
 const initialState = {
   isAuthenticated: null,
   loading: null,
@@ -24,7 +23,6 @@ function authReducer(state = initialState, action) {
       };
     //case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
-      
       return {
         ...state,
         ...payload,
@@ -37,7 +35,6 @@ function authReducer(state = initialState, action) {
     case LOGOUT:
       return {
         ...state,
-     
 
         isAuthenticated: false,
         loading: false,

@@ -8,13 +8,13 @@ const Login = ({ setAlert, login }) => {
   };
 
   return (
-    <div className="container" >
-    <button onClick={googleAuth} className="button">
-      {" "}
-      <div className="logo"></div>
-      <div className="sign-in-text">Sign in with Google</div>
-    </button>
-  </div>
+    <div className="container">
+      <button onClick={googleAuth} className="button">
+        {" "}
+        <div className="logo"></div>
+        <div className="sign-in-text">Sign in with Google</div>
+      </button>
+    </div>
   );
 };
 login.propTypes = {

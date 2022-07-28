@@ -27,7 +27,7 @@ app.use(
     secret: process.env.PASSPORT_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { originalMaxAge: 1000 * 60   },
+    cookie: { originalMaxAge: 1000 * 60 },
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   })
 );
