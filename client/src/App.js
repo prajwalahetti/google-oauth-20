@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { loadUser } from "./actions/auth";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
 const App = () => {
   useEffect(() => {
     const fetchUser = () => {
@@ -35,6 +36,7 @@ const App = () => {
             />
           </Routes>
         </div>
+        <Footer/>
       </BrowserRouter>
     </Provider>
   );
